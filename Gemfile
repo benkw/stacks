@@ -16,6 +16,7 @@ gem 'bootstrap-sass',           '3.3.6'
 gem 'carrierwave',              '0.11.2'
 gem 'mini_magick',              '4.5.1'
 gem "minitest",                 '5.10.1'
+gem 'rename'
 
 gem 'market_beat'
 gem 'chartkick'
