@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root 'static_pages#home'
  
   # get 'static_pages/about' -> this takes you to http://www.example.com/static_pages/about
