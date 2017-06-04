@@ -1,0 +1,13 @@
+<% provide(:title, "Edit user") %>
+
+<h1>Update your profile</h1>
+
+<p>Name: <%= @user.name %></p>
+<p>Email: <%= @user.email %></p>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  
+  <%= f.submit "Update email" %>
+<% end %>
