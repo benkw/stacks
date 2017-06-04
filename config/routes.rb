@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
   root 'static_pages#home'
  
@@ -9,4 +8,11 @@ Rails.application.routes.draw do
   # help_url  -> 'http://www.example.com/help'
   get '/about', to: 'static_pages#about'
   get '/help', to:  'static_pages#help'
+  
+  # resource routing declares index, show, new, edit, create, update and destroy actions
+  # have to individually create each of the views: "show.html.erb" etc.
+  # create the methods for each view (.html.erb) in the Users controller file with a method for each view
+  resources :users
+  
+  get '/signup', to: 'users#new'
 end
