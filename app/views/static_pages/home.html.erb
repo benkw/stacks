@@ -1,9 +1,19 @@
+<%# this is the body in application.hmtl.erb and inserts into <%= yield %/> code %>
 <% provide(:title, "Stacks") %>
 
-<%# this is the body in aplication.hmtl.erb and inserts into <%= yield %/> code %>
-<h1>Stacks home page</h1>
-<p>
-  This is the home page for Stacks.
+<div class="center">
   
-  <li> or <%= link_to "Sign up!", signup_url %></li>
-</p>
+  <h1>Stacks</h1>
+  
+  <h2>
+      This is the home page for Stacks.
+  </h2>
+
+</div>
+
+
+
+  
+  <ul> or <%= link_to "Sign up!", signup_url %></ul>
+  
+<%= image_tag("chartkick.png", alt: "Chartkick placeholder", class: "center") %>

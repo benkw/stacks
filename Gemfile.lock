@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/twbs/bootstrap-rubygem
+  revision: e92f95fb42ab938fd6f4d59e7b3b243e297ef58f
+  specs:
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.9.9, < 2.0)
+      sass (>= 3.4.19)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +137,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     pg (0.18.4)
+    popper_js (1.9.9)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -217,6 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (= 3.1.11)
+  bootstrap!
   bootstrap-sass (= 3.3.6)
   bootstrap-will_paginate (= 0.0.10)
   byebug (= 9.0.0)

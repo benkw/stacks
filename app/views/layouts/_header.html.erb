@@ -1,12 +1,14 @@
-<header class ="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-light bg-faded">
   <div class="container">
-    <%= link_to "stacks", root_path, id: "logo" %>
     <nav>
+      <%= link_to "Stacks", root_path, id: "logo" %>
+      
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <li><%= link_to "Log in", '#' %></li>
       </ul>
+      
     </nav>
   </div>
 </header>
