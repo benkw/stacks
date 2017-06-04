@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   def create # This action actually creates the user
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user
+       
     else
-      redirect_to signup_path
+      render 'new'
     end
   end
   
@@ -28,7 +28,6 @@ class UsersController < ApplicationController
   private
   
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
