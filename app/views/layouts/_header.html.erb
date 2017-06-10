@@ -1,14 +1,15 @@
 <header class="navbar navbar-fixed-top navbar-light bg-faded">
-  <div class="container">
+  <div class="container padding">
     <nav>
-      <%= link_to "Stacks", root_path, id: "logo" %>
-      
+      <a style="font-size:20px" class="lead" href="/">
+        <i class="material-icons" style="font-size:36px" >multiline_chart</i>Stacks
+      </a>
+
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
+        <button type="button" class="btn btn-default btn-md"><li><%= link_to "Home", root_path %></li></button>
+        <button type="button" class="btn btn-default btn-md"><li><%= link_to "Help", help_path %></li></button>
+        <button type="button" class="btn btn-default btn-md"><li><%= link_to "Log in", '#' %></li></button>
       </ul>
-      
     </nav>
   </div>
 </header>

@@ -1,8 +1,10 @@
 <%# this is the body in application.hmtl.erb and inserts into <%= yield %/> code %>
 <% provide(:title, "Stacks") %>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <div class="center">
-  <h1>Stacks</h1>
+  <h1 class="lead large">Stacks</h1>
 
   <div class="container">
   	<div class="row">
@@ -22,4 +24,6 @@
 
 <%= image_tag("chartkick.png", alt: "Chartkick placeholder", class: "center") %>
 
-<h2 class="lead center"><%= link_to "Sign up", signup_url %></ul> now!</h2>
+<div class="center padding">
+  <button type="button" class="btn btn-default btn-lg"><%= link_to "Sign up now!", signup_url %></button>
+</div>

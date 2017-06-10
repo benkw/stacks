@@ -1,6 +1,18 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
+body {
+  padding-top: 50px;
+}
+
+h1.large {
+  font-size: 80px;
+}
+
+h1.center {
+  margin-bottom: 20px;
+}
+
 .center {
   text-align: center;
 }
@@ -10,24 +22,9 @@ img.center {
   margin: 0 auto;
 }
 
-.center h1 {
-  margin-bottom: 50px;
-}
-
-#logo {
-  margin-right: 10px;
-  font-size: 1.7em;
-  float: left;
-  font-weight: bold;
-}
-
 .navbar-brand {
   height: 30px;
   width: 30px;
-}
-
-h1 {
-  text-align: center;
 }
 
 footer ul {
@@ -36,9 +33,18 @@ footer ul {
 
 footer {
   margin-top: 45px;
-  padding-top: 5px;
+  padding-top: 25px;
   border-top: 1px solid #eaeaea;
   color: #777;
+}
+
+.padding {
+  padding-top: 15px;
+}
+
+i.padding {
+  padding-right: 6px;
+  padding-left: 6px;
 }
 
 
