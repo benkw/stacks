@@ -9,7 +9,7 @@
   <div class="container">
   	<div class="row">
       <div id="custom-search-input">
-        <div class="input-group col-md-4 col-sm-offset-4">
+        <div class="input-group col-md-4 center">
           <input type="text" class="search-query form-control" placeholder="Enter a symbol or keyword" />
           <span class="input-group-btn">
             <button class="btn btn-danger" type="button">
@@ -22,7 +22,13 @@
   </div>
 </div>
 
-<%= image_tag("chartkick.png", alt: "Chartkick placeholder", class: "center padding") %>
+<% data = { 20.days.ago => 17, 15.days.ago => 5, 10.days.ago => 23, 5.days.ago => 15, 0.days.ago => 9 } %>
+
+<div class="dashboard">
+  <%= line_chart(data, id: "dow", width: "300px", height: "250px", xtitle: "Dow Jones Industrial Average") %>
+  <%= line_chart(data, id: "s&p", width: "300px", height: "250px", xtitle: "S&P 500 Index") %>
+  <%= line_chart(data, id: "nasd", width: "300px", height: "250px", xtitle: "Nasdaq Composite") %>
+</div>
 
 <div class="center padding">
   <button type="button" class="btn btn-default btn-lg"><%= link_to "Sign up now!", signup_url %></button>
