@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create # This action actually creates the user
     @user = User.new(user_params)
     if @user.save
-       
+      redirect_to user_url(@user)
     else
       render 'new'
     end
@@ -28,6 +28,10 @@ class UsersController < ApplicationController
   private
   
     def user_params
+      # require the params hash to have a :user attribute
+      # in the :user hash, we only want to permit name, email, pass, and pass_conf
+      # will raise an error if :user attribute is missing
+      # returns version of params with only the permitted attributes
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

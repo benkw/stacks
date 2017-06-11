@@ -1,21 +1,31 @@
 <% provide(:title, "Sign up") %>
-<h1>Create your account</h1>
 
-    <%= form_for(@user) do |f| %>
+<div class="row margin background">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: signup_path) do |f| %>
       <%= f.label :name %>
-      <%= f.text_field :name %>
-
+      <%= f.text_field :name, class: 'form-control' %>
+  
       <%= f.label :email %>
-      <%= f.email_field :email %>
-
+      <%= f.email_field :email, class: 'form-control' %>
+  
       <%= f.label :password %>
-      <%= f.password_field :password %>
-
+      <%= f.password_field :password, class: 'form-control' %>
+  
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      
+      <%# this has error messages that gets populated if there is a failed attempt at saving %>
+      <%# using the sample_user.errors.full_messages object %>
+      <%= render 'shared/error_messages' %>
+      
+      <div class="padding">
+        <%= f.submit "Create my account", class: "btn btn-default" %>
+      </div>
     <% end %>
+  </div>
+</div>
+  
     
     <%# 
     1. first line of of this html ensures hitting submit makes a POST request to the /users URL
@@ -40,7 +50,7 @@
       <input id="user_password_confirmation"
              name="user[password_confirmation]" type="password" />
     
-      <input class="btn btn-primary" name="commit" type="submit"
+      <input class="btn btn-default" name="commit" type="submit"
              value="Create my account" />
     </form>
     %>
