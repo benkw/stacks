@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root 'static_pages#home'
  
   # get 'static_pages/about' -> this takes you to http://www.example.com/static_pages/about
@@ -21,5 +23,13 @@ Rails.application.routes.draw do
   
   # make a submitted and unsubmitted signup form use the same custom named route
   post '/signup', to: 'users#create'
+
+  # we do not need the full suite of RESTful routes for the Sessions resource
+  # session resource uses only named routes 
+  # GET and POST requests through login route
+  # DELETE request through logout route
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
 end
