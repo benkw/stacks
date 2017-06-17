@@ -2,6 +2,7 @@
 
 <div class="row margin background">
   <div class="col-md-6 col-md-offset-3">
+    <%#= form_for(@user) allows Rails to infer the action of the form should post to the URL /users %>
     <%= form_for(@user, url: signup_path) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
