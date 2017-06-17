@@ -8,20 +8,16 @@
       <ul class="nav navbar-nav navbar-right">
         <button type="button" class="btn btn-default btn-md"><li><%= link_to "Home", root_path %></li></button>
         <button type="button" class="btn btn-default btn-md"><li><%= link_to "Help", help_path %></li></button>
+        
         <% if is_logged_in? %>
-          <li class="dropdown">
-            <a href="#", class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
+            <button class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">Account
+            <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", '#' %></li>
               <li class="divider"></li>
-              <li>
-                <%= link_to "Log  out", logout_path, method: :delete %>
-              </li>
+              <li><%= link_to "Log out", logout_path, method: :delete %></li>
             </ul>
-          </li>
         <% else %>
           <button type="button" class="btn btn-default btn-md"><li><%= link_to "Log in", login_path %></li></button>
         <% end %>

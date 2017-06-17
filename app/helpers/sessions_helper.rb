@@ -13,7 +13,7 @@ module SessionsHelper
     # and encrpyted version of the user's id
     # allows us to retrieve the id on subsequent pages using session[:user_id]
     # sessions method creates this temporary cookie that expires immediately when the browser is closed
-    session[:user] = user.id
+    session[:user_id] = user.id
   end
   
   def current_user
