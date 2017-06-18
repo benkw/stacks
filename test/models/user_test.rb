@@ -84,4 +84,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
   
+  test "associated stacks are destroyed when the user is destroyed" do
+    @user.save
+    @user.stacks.create!(name: "401K", description: "Voya Financial")
+    assert_difference 'Stack.count', -1 do
+      @user.destroy
+    end
+  end
+  
 end

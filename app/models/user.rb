@@ -1,5 +1,8 @@
 # put methods here that don't need a user object; class methods
 class User < ApplicationRecord
+  has_many :stacks, dependent: :destroy # belongs_to/has_many association associates stacks with a user
+  # user.stacks.create/build/create!
+  # if a user is destroyed, the user's stacks are destroyed as well
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 50 }

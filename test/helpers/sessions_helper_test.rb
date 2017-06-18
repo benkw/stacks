@@ -13,6 +13,7 @@ class SessionsHelperTest < ActionView::TestCase
   end
 
   test "current_user returns nil when remember digest is wrong" do
+    # replaces the user's remember_digest with the digest of a random value, thus invalidating the cookie
     @user.update_attribute(:remember_digest, User.digest(User.new_token))
     assert_nil current_user
   end

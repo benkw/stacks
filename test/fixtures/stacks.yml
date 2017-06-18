@@ -1,9 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+IRA:
+  name: "ROTH"
+  description: "contains SCHB and SCHF"
+  created_at: <%= 10.minutes.ago %>
 
-one:
-  user: one
-  name: MyString
+401K:
+  name: "VOYA"
+  description: "contains Equity Units, Extended Market Units, International Units"
+  created_at: <%= 1.year.ago %>
 
-two:
-  user: two
-  name: MyString
+brokerage:
+  name: "SCHWAB"
+  description: "contains SCHF, SCHA, SCHZ, SCHE, SCHX"
+  created_at: <%= 2.hours.ago %>
