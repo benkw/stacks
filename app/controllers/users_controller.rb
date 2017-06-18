@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create # This action actually creates the user
     @user = User.new(user_params)
     if @user.save
+      log_in @user
+      flash[:success] = "Welcome to Stocker."
       redirect_to user_url(@user)
     else
       render 'new'

@@ -23,7 +23,7 @@
 </div>
 
 <div class="dashboard">
-  <%= line_chart(@data1, id: "dow", title: "Dow Jones Industrial Average", colors: ["green"] ) %>
+  <%= line_chart(@data1, id: "dow", title: "Dow Jones Industrial Average", colors: ["green"], discrete: false ) %>
   <%= line_chart(@data2, id: "s&p", title: "S&P 500 Index", colors: ["red"] ) %>
   <%= line_chart(@data3, id: "nasd", title: "Nasdaq Composite", colors: ["blue"] ) %>
 </div>

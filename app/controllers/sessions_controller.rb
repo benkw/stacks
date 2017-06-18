@@ -29,5 +29,7 @@ class SessionsController < ApplicationController
   # the logging out is handled by a DELETE request to the destroy action
   # there is no view associated with this action
   def destroy
+    log_out # no parameter since we already know who the user is
+    redirect_to root_path
   end
 end

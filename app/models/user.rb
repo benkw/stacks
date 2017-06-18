@@ -12,4 +12,11 @@ class User < ApplicationRecord
   #    then compares to the existing password digest
   #    if it matches, it returns the user
   # 3. this is also making sure password and password_confirmation are the same
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                              BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
 end
