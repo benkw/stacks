@@ -19,6 +19,8 @@ class SessionsController < ApplicationController
     if submitted_user && submitted_user.authenticate(params[:session][:password])
       # create temporary cookie containing submitted_user's id, using Rails sessions method in SessionHelper
       log_in submitted_user
+      params[:session][:remember_me] == '1' ? remember(submitted_user) : forget(submitted_user)
+                # this remember method is different than the class method in User.rb. it is in session_helper.rb
       redirect_to submitted_user # same as user_url(submitted_user)
     else
       flash.now[:danger] = "Invalid email/password combination"
@@ -29,7 +31,7 @@ class SessionsController < ApplicationController
   # the logging out is handled by a DELETE request to the destroy action
   # there is no view associated with this action
   def destroy
-    log_out # no parameter since we already know who the user is
+    log_out if is_logged_in? # no parameter since we already know who the user is
     redirect_to root_path
   end
 end
