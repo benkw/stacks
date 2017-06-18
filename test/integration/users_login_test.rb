@@ -65,7 +65,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_not_empty cookies['remember_token']
   end
   
-  test "test remember me checkbox unchecked" do
+  test "remember me checkbox unchecked" do
     # Log in to set the cookie.
     log_in_as(@michael, remember_me: '1')
     # Log in again and verify that the cookie is deleted.
