@@ -1,0 +1,27 @@
+AAPL:
+  name: "Apple Inc."
+  ticker: "AAPL"
+
+GOOGL:
+  name: "Alphabet Inc. Class A"
+  ticker: "GOOGL"
+
+SNAP:
+  name: "Snap Inc."
+  ticker: "SNAP"
+
+AMZN:
+  name: "Amazon.com, Inc."
+  ticker: "AMZN"
+
+SCHA:
+  name: "Schwab U.S. Small Cap ETF"
+  ticker: "SCHA"
+
+SCHB:
+  name: "Schwab U.S. Broad Market ETF"
+  ticker: "SCHB"
+
+SCHZ:
+  name: "Schwab U.S. Aggregate Bond ETF"
+  ticker: "SCHZ"

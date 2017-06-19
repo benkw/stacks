@@ -32,7 +32,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
-  test "test valid emails" do
+  test "valid emails" do
     valid_addresses = ["user@example.com", "USER@foo.COM", "A_US-ER@foo.bar.org", 
                        "first.last@foo.jp", "alice+bob@baz.cn"]
     valid_addresses.each do |address|
@@ -41,7 +41,7 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
-  test "test invalid emails" do
+  test "invalid emails" do
     invalid_addresses = ["user@example,com", "user_at_foo.org", "user.name@example.",
                          "foo@bar_baz.com", "foo@bar+baz.com"]
     invalid_addresses.each do |address|
@@ -73,7 +73,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
-  test "test password and password_confirmation are equal" do
+  test "password and password_confirmation are equal" do
     # bcrypt has_secure_password does this
     @user.password = "password"
     @user.password_confirmation = "passsword"
@@ -89,6 +89,24 @@ class UserTest < ActiveSupport::TestCase
     @user.stacks.create!(name: "401K", description: "Voya Financial")
     assert_difference 'Stack.count', -1 do
       @user.destroy
+    end
+  end
+  
+  test "associated stocks are destroyed when the user is destroyed" do
+    @user.save
+    @user.stacks.create!(name: "401K", description: "Voya Financial")
+    @user.stacks.first.stocks.create!(ticker: "AAPL", name: "Apple Inc.")
+    assert_difference 'Stock.count', -1 do
+      @user.destroy
+    end
+  end
+  
+  test "associated stocks are destroyed when the stack is destroyed" do
+    @user.save
+    @user.stacks.create!(name: "401K", description: "Voya Financial")
+    @user.stacks.first.stocks.create!(ticker: "AAPL", name: "Apple Inc.")
+    assert_difference 'Stock.count', -1 do
+      @user.stacks.first.destroy
     end
   end
   
