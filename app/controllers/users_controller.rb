@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @stacks = @user.stacks
   end
   
   def edit # This action is reponsible for rendering the view
